@@ -1,0 +1,57 @@
+#flash-message {
+    display: flex;
+    justify-content: end;
+    position: fixed;
+    right: 0;
+    top: 2rem;
+    transition: all 1s;
+    z-index: 9999;
+}
+
+#flash-content {
+    color: #fff !important;
+    width: fit-content;
+    padding: 0.75rem 1.75rem;
+    text-align: end;
+    border-radius: 1rem 0 0 1rem;
+}
+
+#flash-content[data-type="success"] {
+    background-color: #05a845; /* Equivalent to bg-green-600 */
+    color: #fff !important;
+}
+
+#flash-content[data-type="error"] {
+    background-color: #ff497c; /* Equivalent to bg-flashError */
+    color: #fff !important;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.animate-slideIn {
+    animation: slideIn 0.5s forwards;
+}
+
+.animate-slideOut {
+    animation: slideOut 0.5s forwards;
+}
